@@ -23,12 +23,12 @@ class UserController
         
         $lastName = $body['lastName'] ?? "";
         $firstName = $body['firstName'] ?? "";
-        $userName = $body['userName'] ?? "";
-        $email = $body['email'] ?? "";
+        $userName = $body['username'] ?? "";
+        $email = $body['mail'] ?? "";
         $password = $body['password'] ?? "";
-        $address = $body['address'] ?? "";
+        $address = $body['adresse'] ?? "";
         $city = $body['city'] ?? "";
-        $zipCode = $body['zipCode'] ?? "";
+        $zipCode = $body['cityCode'] ?? "";
         $phone = $body['phone'] ?? "";
         $country = $body['country'] ?? "";
         $civility  = $body['civility'] ?? "";
@@ -110,6 +110,8 @@ class UserController
         $this->_entityManager->persist($client);
         $this->_entityManager->flush();
 
+        $response -> getBody() -> write(json_encode($client));
+        
         return $response->withHeader('Content-Type', 'application/json')->withStatus(201);
     }
 
@@ -151,17 +153,17 @@ class UserController
         }
 
         $user = array(
-            "Nom" => $dbUser->getLastName(),
-            "Prenom" => $dbUser->getFirstName(),
-            "Login" => $dbUser->getUsername(),
-            "Email" => $dbUser->getEmail(),
-            "Adresse" => $dbUser->getAddress(),
-            "Ville" => $dbUser->getCity(),
-            "CP" => $dbUser->getZipCode(),
-            "Tel" => $dbUser->getPhone(),
-            "Pays" => $dbUser->getCountry(),
-            "Civilite" => $dbUser->getCivility(),
-            "Password" => $dbUser->getPassword(),
+            "lastName" => $dbUser->getLastName(),
+            "firstName" => $dbUser->getFirstName(),
+            "userName" => $dbUser->getUsername(),
+            "email" => $dbUser->getEmail(),
+            "address" => $dbUser->getAddress(),
+            "city" => $dbUser->getCity(),
+            "zipCode" => $dbUser->getZipCode(),
+            "phone" => $dbUser->getPhone(),
+            "country" => $dbUser->getCountry(),
+            "civility" => $dbUser->getCivility(),
+            "password" => $dbUser->getPassword(),
         );
 
         $response->getBody()->write(json_encode($user));
