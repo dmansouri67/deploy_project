@@ -23,7 +23,7 @@ return function (App $app) {
         "algorithm" => ["HS256"],
         "secret" => $_ENV[JWT_SECRET],
         "path" => ["/Order"],
-        "ignore" => ["/test/hello"],
+        "ignore" => ["/User/Login"],
         "error" => function ($response, $arguments) {
             var_dump($arguments);
             $data = array("ERREUR" => "Connexion", "Erreur" => "JWT Non valide");
