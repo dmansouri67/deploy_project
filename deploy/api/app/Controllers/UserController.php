@@ -151,7 +151,7 @@ class UserController
         }
 
         $user = array(
-            "Nomo" => $dbUser->getLastName(),
+            "Nom" => $dbUser->getLastName(),
             "Prenom" => $dbUser->getFirstName(),
             "Login" => $dbUser->getUsername(),
             "Email" => $dbUser->getEmail(),
@@ -159,7 +159,7 @@ class UserController
             "Ville" => $dbUser->getCity(),
             "CP" => $dbUser->getZipCode(),
             "Tel" => $dbUser->getPhone(),
-            "Ville" => $dbUser->getCountry(),
+            "Pays" => $dbUser->getCountry(),
             "Civilite" => $dbUser->getCivility(),
             "Password" => $dbUser->getPassword(),
         );

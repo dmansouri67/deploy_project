@@ -9,7 +9,7 @@ require __DIR__ . '/../vendor/autoload.php';
 const JWT_SECRET = "makey1234567";
 
 $app = AppFactory::create();
-
+$app->addErrorMiddleware(true, true, true);
 
 $app->get('/api/hello/{name}', function (Request $request, Response $response, $args) {
     $array = [];
