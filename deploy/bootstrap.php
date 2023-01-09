@@ -1,16 +1,21 @@
 <?php
+
+require_once "vendor/autoload.php";
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
-date_default_timezone_set('America/Lima');
-require_once "vendor/autoload.php";
-$isDevMode = true;
-$config = Setup::createYAMLMetadataConfiguration(array(__DIR__ . "/config/yaml"), $isDevMode);
+
+$conn;
+$isDevMode = false;
+
 $conn = array(
-'host' => 'host',
-'driver' => 'pdo_pgsql',
-'user' => 'cnam_user',
-'password' => 'pass',
-'dbname' => 'cnam',
-'port' => '5432'
+    'host' => 'dpg-ceu7atun6mpglqbvtjq0-a',
+    'driver' => 'pdo_pgsql',
+    'user' => 'catshop_bdd_user',
+    'password' => 'Fu6Q8S2STfxvbioHJc85kpkcqk3PI8w4',
+    'dbname' => 'catshop_bdd',
+    'port' => '5432'
 );
+
+$config = Setup::createYAMLMetadataConfiguration(array(__DIR__ . "/config/yaml"), $isDevMode);
 $entityManager = EntityManager::create($conn, $config);
+
