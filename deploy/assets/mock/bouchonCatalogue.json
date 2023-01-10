@@ -1,0 +1,39 @@
+[
+    {
+      "race": "Abyssin",
+      "region": "Asie",
+      "taille": "Moyenne",
+      "poidsMax": 5.5,
+      "prix": 700
+    },
+    {
+      "race": "American Curl",
+      "region": "Etats-Unis",
+      "taille": "Petite à moyenne",
+      "poidsMax": 5,
+      "prix":1100
+    },
+    {
+      "race": "Ashera",
+      "region": "Etats-Unis",
+      "taille": "Moyenne",
+      "poidsMax": 18,
+      "prix":110000
+    },
+    {
+      "race": "Savannah",
+      "region": "Etats-Unis",
+      "taille": "Grande",
+      "poidsMax": 30,
+      "prix":5000
+    },
+    {
+      "race": "Bengal",
+      "region": "Etats-Unis",
+      "taille": "Moyenne",
+      "poidsMax": 7,
+      "prix":3000
+    }
+  ]
+
+  
